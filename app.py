@@ -29,11 +29,14 @@ def predict(data: dict):
     
     :param data: Description
     :type data: dict
-     {"features"=[,,,,]}
+     {"features":[,,,,]}
     """
+    if 'features' not in data:
+        return {"error": "Missing 'features' in request body"}
+    
+    features=np.array(data['features']).reshape(1,-1)
     features = (features - mean[:-1]) / std[:-1]
 
-    features=np.array(data['features']).reshape(1,-1)
     pred = "Yes" if predictml(features,w,b) == 1 else "No"
 
     return {'will_you_be_productive':pred}
