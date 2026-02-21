@@ -12,27 +12,10 @@ The project is designed to be lightweight, scalable and easy to deploy using Doc
 
 ## Tech Stack
 
-### Python
-- Used to implement the machine learning logic and API endpoints
-
-### FastAPI
-- Used to build the REST API
-- Provides high performance, automatic request validation, and interactive API documentation
-- Handles incoming HTTP requests and returns prediction results as JSON
-
-### NumPy
-- Used to load and process the trained model data stored in `model_data.npz`
-- Handles numerical operations required for prediction
-
-### Uvicorn
-- ASGI server used to run the FastAPI application
-- Provides fast and efficient request handling
-
-### Docker
-- Used to containerize the application
-- Ensures consistent execution across different environments
-- Makes deployment easy on any system that supports Docker
-
++ Flask
++ FastAPI
++ NumPy
++ Docker
 ---
 
 ## Project Structure
@@ -110,7 +93,8 @@ docker run -p 8000:8000 productivity-api
 ### Using Docker Compose
 
 ```bash
-docker-compose up
+docekr compose build
+docker compose up
 ```
 
 ---
